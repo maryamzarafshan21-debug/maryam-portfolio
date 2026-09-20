@@ -1,0 +1,9 @@
+All screenshots in this folder were downloaded from asjadchangwani.com (2024) and are PLACEHOLDERS for Maryam Zarafshan's portfolio.
+
+- 11 files `funnel-solvency-*.jpg`  - Solvency credit-repair funnel site screenshots (client work by asjadchangwani.com)
+- 8 files `funnel-garda-*.jpg`      - Garda landscaping funnel site screenshots (client work by asjadchangwani.com)
+- 5 files `workflow-*.jpg`          - GoHighLevel workflow screenshots (client work by asjadchangwani.com)
+- 1 file `zapier-pt-es-ghl-hubspot-*.jpg` - Zapier GHL->HubSpot bridge (client work by asjadchangwani.com)
+- 1 file `portrait-*.jpg`           - Asjad Changwani's PERSONAL PORTRAIT. Do NOT use on Maryam's site. Delete before publishing.
+
+REPLACE every image with Maryam Zarafshan's own client work before the site goes public.

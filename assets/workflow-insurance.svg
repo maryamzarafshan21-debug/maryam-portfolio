@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#1e3a5f"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="698" height="458" rx="17" fill="none" stroke="#e2dccf"/>
+  <rect width="700" height="460" rx="18" fill="#faf7f0"/>
+
+  <text x="44" y="52" fill="#6b6558" font-size="13" letter-spacing="3" font-weight="600">AUTOMATION HUB</text>
+  <text x="44" y="74" fill="#2a2520" font-size="20" font-weight="700">Insurance Agency — 66 Workflows</text>
+
+  <g>
+    <rect x="44" y="112" width="612" height="34" rx="8" fill="#ffffff" stroke="#e2dccf"/>
+    <circle cx="70" cy="129" r="5" fill="#4ade80"/>
+    <text x="86" y="134" fill="#2a2520" font-size="13" font-weight="600">Folders — organized by stage</text>
+    <text x="600" y="134" fill="#6b6558" font-size="12" text-anchor="end">66 published</text>
+  </g>
+
+  <line x1="320" y1="156" x2="320" y2="186" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <g font-size="12">
+    <rect x="44" y="196" width="180" height="72" rx="12" fill="#ffffff" stroke="#1e3a5f"/>
+    <circle cx="70" cy="232" r="14" fill="none" stroke="#1e3a5f"/>
+    <text x="70" y="236" fill="#3d63a0" font-size="10" font-weight="700" text-anchor="middle">01</text>
+    <text x="96" y="222" fill="#2a2520" font-weight="600">Lead intake</text>
+    <text x="96" y="242" fill="#6b6558">forms, calls, partners</text>
+  </g>
+  <g font-size="12">
+    <rect x="260" y="196" width="180" height="72" rx="12" fill="#ffffff" stroke="#e2dccf"/>
+    <circle cx="286" cy="232" r="14" fill="none" stroke="#1e3a5f"/>
+    <text x="286" y="236" fill="#3d63a0" font-size="10" font-weight="700" text-anchor="middle">02</text>
+    <text x="312" y="222" fill="#2a2520" font-weight="600">Quotes</text>
+    <text x="312" y="242" fill="#6b6558">documents, handoffs</text>
+  </g>
+  <g font-size="12">
+    <rect x="476" y="196" width="180" height="72" rx="12" fill="#ffffff" stroke="#e2dccf"/>
+    <circle cx="502" cy="232" r="14" fill="none" stroke="#1e3a5f"/>
+    <text x="502" y="236" fill="#3d63a0" font-size="10" font-weight="700" text-anchor="middle">03</text>
+    <text x="528" y="222" fill="#2a2520" font-weight="600">Nurture &amp; SLA</text>
+    <text x="528" y="242" fill="#6b6558">tasks, reminders</text>
+  </g>
+
+  <line x1="320" y1="268" x2="320" y2="298" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <g font-size="12">
+    <rect x="44" y="308" width="180" height="72" rx="12" fill="#ffffff" stroke="#e2dccf"/>
+    <circle cx="70" cy="344" r="14" fill="none" stroke="#4ade80"/>
+    <text x="70" y="348" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">04</text>
+    <text x="96" y="334" fill="#2a2520" font-weight="600">Renewals</text>
+    <text x="96" y="354" fill="#6b6558">revenue events</text>
+  </g>
+  <g font-size="12">
+    <rect x="260" y="308" width="180" height="72" rx="12" fill="#ffffff" stroke="#e2dccf"/>
+    <circle cx="286" cy="344" r="14" fill="none" stroke="#4ade80"/>
+    <text x="286" y="348" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">05</text>
+    <text x="312" y="334" fill="#2a2520" font-weight="600">Missed calls</text>
+    <text x="312" y="354" fill="#6b6558">text-back in seconds</text>
+  </g>
+  <g font-size="12">
+    <rect x="476" y="308" width="180" height="72" rx="12" fill="#ffffff" stroke="#e2dccf"/>
+    <circle cx="502" cy="344" r="14" fill="none" stroke="#4ade80"/>
+    <text x="502" y="348" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">06</text>
+    <text x="528" y="334" fill="#2a2520" font-weight="600">Notifications</text>
+    <text x="528" y="354" fill="#6b6558">slack, status, mail</text>
+  </g>
+
+  <rect x="180" y="396" width="340" height="34" rx="17" fill="#ffffff" stroke="#1e3a5f" stroke-opacity="0.6"/>
+  <text x="350" y="418" fill="#2a2520" font-size="13" font-weight="600" text-anchor="middle">Snapshot-ready.</text>
+  <text x="350" y="418" fill="#3d63a0" font-size="13" text-anchor="end" dx="-70" font-weight="700">Clone &amp; deploy →</text>
+</svg>

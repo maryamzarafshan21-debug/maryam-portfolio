@@ -1,0 +1,1 @@
+Project screenshots in assets/projects/ are downloaded from asjadchangwani.com (the reference portfolio Maryam asked to mirror). They are placeholders for layout preview. IMPORTANT: replace all of them with Maryam Zarafshan's own client screenshots before publishing publicly.
