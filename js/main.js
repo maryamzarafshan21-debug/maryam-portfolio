@@ -398,17 +398,18 @@ document.addEventListener('keydown', (e) => {
   if (open) closeModal(open);
 });
 
-/* ---------- Contact form ---------- */
+/* ---------- Contact form (EmailJS) ---------- */
 const contactForm = document.getElementById('contact-form');
-const CONTACT_EMAIL = 'afsheen.ghl@gmail.com';
+
+emailjs.init({
+  publicKey: 'YOUR_PUBLIC_KEY',
+});
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const name = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
-  const budget = document.getElementById('f-budget').value;
   const message = document.getElementById('f-message').value.trim();
 
   if (!name || !email || !message) {
@@ -416,13 +417,26 @@ contactForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const subject = encodeURIComponent(`Project inquiry from ${name}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '—'}\nBudget: ${budget || '—'}\n\nProject Details:\n${message}`
-  );
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
 
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  showFormStatus('Opening your email app — just hit send!', 'ok');
+  emailjs
+    .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm, {
+      from_name: name,
+      reply_to: email,
+    })
+    .then(() => {
+      showFormStatus('Message sent — I\'ll get back to you within 24 hours!', 'ok');
+      contactForm.reset();
+    })
+    .catch(() => {
+      showFormStatus('Something went wrong. Please email me directly at afsheen.ghl@gmail.com.', 'error');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    });
 });
 
 function showFormStatus(text, type) {
