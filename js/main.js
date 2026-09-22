@@ -402,7 +402,7 @@ document.addEventListener('keydown', (e) => {
 const contactForm = document.getElementById('contact-form');
 
 emailjs.init({
-  publicKey: 'YOUR_PUBLIC_KEY',
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 });
 
 contactForm.addEventListener('submit', (event) => {
@@ -422,7 +422,7 @@ contactForm.addEventListener('submit', (event) => {
   submitBtn.textContent = 'Sending...';
 
   emailjs
-    .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm, {
+    .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, contactForm, {
       from_name: name,
       reply_to: email,
     })
