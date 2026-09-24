@@ -188,6 +188,8 @@ function initParticles(el) {
   let baseY = 0;
   let particles = [];
   let raf = null;
+  let visible = false;
+  let running = false;
 
   function layout() {
     width = el.clientWidth;
@@ -240,11 +242,40 @@ function initParticles(el) {
     });
   }
 
+  function start() {
+    if (reduceMotionParticles || running || !visible || document.hidden) return;
+    running = true;
+    raf = requestAnimationFrame(draw);
+  }
+
+  function stop() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+    raf = null;
+  }
+
   layout();
+
   if (reduceMotionParticles) {
     staticDraw();
+  } else if (typeof IntersectionObserver !== 'undefined') {
+    const io = new IntersectionObserver(
+      (entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) start();
+        else stop();
+      },
+      { rootMargin: '80px' }
+    );
+    io.observe(el);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else if (visible) start();
+    });
+    window.addEventListener('pagehide', stop);
   } else {
-    raf = requestAnimationFrame(draw);
+    visible = true;
+    start();
   }
 
   if (typeof ResizeObserver !== 'undefined') {
@@ -252,6 +283,13 @@ function initParticles(el) {
       if (el.clientWidth > 0) layout();
     });
     ro.observe(el);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      layout();
+      if (reduceMotionParticles) staticDraw();
+    });
   }
 }
 
