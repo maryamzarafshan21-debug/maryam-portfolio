@@ -14,6 +14,7 @@
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <!-- Header -->
   <header class="site-header">
@@ -367,64 +368,231 @@
           Real systems, real workflows, real outcomes. Every build ships snapshot-ready so it can be cloned and scaled.
         </p>
 
+        <!-- ============================================
+             Card layout ported from the "Selected Work" grid on
+             msakithub.com, restyled for this site's cream palette.
+             The content is our own GoHighLevel work. The filter
+             chips are progressive enhancement — with JS off every
+             card stays visible and every modal still opens.
+             ============================================ -->
+        <div class="work-head reveal">
+          <p class="work-head-copy">
+            A curated look at eight GoHighLevel builds — funnels, automations,
+            AI agents and integrations. Click any card for the walkthrough,
+            the screenshots and the stack behind it.
+          </p>
+          <div class="work-stats">
+            <div class="work-stat">
+              <span class="work-stat-num">8</span>
+              <span class="work-stat-label">Projects</span>
+            </div>
+            <div class="work-stat">
+              <span class="work-stat-num">25</span>
+              <span class="work-stat-label">Screens</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-marquee reveal" aria-hidden="true">
+          <div class="work-marquee-track">
+            <span>GHL Workflows ✦ AI Agents ✦ Funnels ✦ SMS Automation ✦ Zapier ✦ CRM Pipelines ✦</span>
+            <span>GHL Workflows ✦ AI Agents ✦ Funnels ✦ SMS Automation ✦ Zapier ✦ CRM Pipelines ✦</span>
+          </div>
+        </div>
+
+        <div class="work-filters reveal" role="group" aria-label="Filter projects by type">
+          <button class="work-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="work-filter" type="button" data-filter="funnel" aria-pressed="false">Funnel</button>
+          <button class="work-filter" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+          <button class="work-filter" type="button" data-filter="ai-agent" aria-pressed="false">AI Agent</button>
+          <button class="work-filter" type="button" data-filter="sms" aria-pressed="false">SMS</button>
+          <button class="work-filter" type="button" data-filter="integration" aria-pressed="false">Integration</button>
+        </div>
+
         <h3 class="sub-title reveal">Recent Work</h3>
-        <div class="gallery-grid reveal">
-          <figure class="gallery-card" data-open="solvency" role="button" tabindex="0" aria-label="Open case study: Solvency — Credit Repair" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/funnel-solvency-01-hero-7dcAdxx--thumb.webp" srcset="assets/projects/funnel-solvency-01-hero-7dcAdxx--thumb.webp 720w, assets/projects/funnel-solvency-01-hero-7dcAdxx-_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="Solvency — credit repair funnel homepage" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">Funnel</span>
-              <h4>Solvency — Credit Repair</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" data-open="garda" role="button" tabindex="0" aria-label="Open case study: Garda — Landscaping and Garden" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/funnel-garda-01-hero-tQDzYVkY-thumb.webp" srcset="assets/projects/funnel-garda-01-hero-tQDzYVkY-thumb.webp 720w, assets/projects/funnel-garda-01-hero-tQDzYVkY_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="Garda — landscaping & garden services site" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">Funnel Site</span>
-              <h4>Garda — Landscaping &amp; Garden</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" data-open="realestate" role="button" tabindex="0" aria-label="Open case study: Real Estate — Ads to Appointments" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/workflow-real-estate-ghl-DaSGGzCS-thumb.webp" srcset="assets/projects/workflow-real-estate-ghl-DaSGGzCS-thumb.webp 720w, assets/projects/workflow-real-estate-ghl-DaSGGzCS_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="Real estate GHL workflow" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">GHL Workflow</span>
-              <h4>Real Estate — Ads to Appointments</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" data-open="dental" role="button" tabindex="0" aria-label="Open case study: Dental Appointment Engine" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/workflow-dental-dae-0VUkaZ2a-thumb.webp" srcset="assets/projects/workflow-dental-dae-0VUkaZ2a-thumb.webp 720w, assets/projects/workflow-dental-dae-0VUkaZ2a_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="Dental appointment engine GHL workflow" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">AI Agent</span>
-              <h4>Dental Appointment Engine</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" data-open="orr" role="button" tabindex="0" aria-label="Open case study: Orr and Associates — 66 Workflows" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/workflow-insurance-orr-Di096j0j-thumb.webp" srcset="assets/projects/workflow-insurance-orr-Di096j0j-thumb.webp 720w, assets/projects/workflow-insurance-orr-Di096j0j_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="Insurance agency workflow folders" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">Automation</span>
-              <h4>Orr &amp; Associates — 66 Workflows</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" data-open="missedcall" role="button" tabindex="0" aria-label="Open case study: Missed Call Text-Back" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/workflow-missed-call-text-back-BhtqrN7i_result.webp" alt="Missed call text-back workflow" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">SMS</span>
-              <h4>Missed Call Text-Back</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card">
-            <img decoding="async" src="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW-thumb.webp" srcset="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW-thumb.webp 720w, assets/projects/workflow-automatizacion-pt-es-D6eyoPGW_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="PT/ES automation recipes workflow" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">Recipes</span>
-              <h4>Automatización PT/ES</h4>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card" data-open="zapier" role="button" tabindex="0" aria-label="Open case study: GHL to HubSpot via Zapier" aria-haspopup="dialog">
-            <img decoding="async" src="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm-thumb.webp" srcset="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm-thumb.webp 720w, assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm_result.webp 1024w" sizes="(min-width: 1000px) 320px, (min-width: 640px) 44vw, 92vw" alt="Zapier GHL to HubSpot bridge" loading="lazy" />
-            <figcaption>
-              <span class="g-tag">Integration</span>
-              <h4>GHL ⇄ HubSpot via Zapier</h4>
-            </figcaption>
-          </figure>
+        <div class="work-grid reveal" id="work-grid">
+          <article class="work-card" data-tags="funnel" data-open="solvency" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: Solvency, Credit Repair">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/funnel-solvency-01-hero-7dcAdxx--thumb.webp" srcset="assets/projects/funnel-solvency-01-hero-7dcAdxx--thumb.webp 720w, assets/projects/funnel-solvency-01-hero-7dcAdxx-_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Solvency credit repair funnel homepage" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">01</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    11
+                  </span>
+                  <span class="work-badge">2026</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Solvency &mdash; Credit Repair</h3>
+              <p class="work-tagline">An 11-section funnel that captures a lead at every scroll point.</p>
+              <p class="work-desc">Every section ships a form, so a prospect can convert from the hero, the pricing block or the FAQ. Leads land in the CRM tagged by section and enter behaviour-triggered nurture.</p>
+              <div class="work-tags"><span>Funnel</span><span>Lead Capture</span><span>Nurture</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="funnel" data-open="garda" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: Garda, Landscaping and Garden">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/funnel-garda-01-hero-tQDzYVkY-thumb.webp" srcset="assets/projects/funnel-garda-01-hero-tQDzYVkY-thumb.webp 720w, assets/projects/funnel-garda-01-hero-tQDzYVkY_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Garda landscaping and garden services site" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">02</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    8
+                  </span>
+                  <span class="work-badge">2026</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Garda &mdash; Landscaping &amp; Garden</h3>
+              <p class="work-tagline">An 8-section local-services site where every section captures a request.</p>
+              <p class="work-desc">Service request forms on all eight sections route straight into the pipeline with automated follow-up, plus a calendar for seasonal bookings.</p>
+              <div class="work-tags"><span>Funnel</span><span>Booking</span><span>Local Services</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="automation sms" data-open="realestate" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: Real Estate, Ads to Appointments">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/workflow-real-estate-ghl-DaSGGzCS-thumb.webp" srcset="assets/projects/workflow-real-estate-ghl-DaSGGzCS-thumb.webp 720w, assets/projects/workflow-real-estate-ghl-DaSGGzCS_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Real estate GHL workflow from ads to appointments" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">03</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    1
+                  </span>
+                  <span class="work-badge">2026</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Real Estate &mdash; Ads to Appointments</h3>
+              <p class="work-tagline">Facebook Lead Ads to a booked property tour, without living in spreadsheets.</p>
+              <p class="work-desc">Duplicate checks on phone and email before pipeline entry, round-robin assignment to the acquisitions rep, and an instant SMS with a booking link inside two minutes.</p>
+              <div class="work-tags"><span>Automation</span><span>Paid Ads</span><span>SMS</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="automation ai-agent" data-open="dental" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: Dental Appointment Engine">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/workflow-dental-dae-0VUkaZ2a-thumb.webp" srcset="assets/projects/workflow-dental-dae-0VUkaZ2a-thumb.webp 720w, assets/projects/workflow-dental-dae-0VUkaZ2a_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Dental appointment engine GHL workflow" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">04</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    1
+                  </span>
+                  <span class="work-badge">2026</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Dental Appointment Engine</h3>
+              <p class="work-tagline">An AI front desk that books, reminds and follows up on autopilot.</p>
+              <p class="work-desc">Pipelines that mirror the front desk, instant SMS and email on new leads, a voicemail-aware missed-call path, and 24h/1h reminder cadences that recover no-shows.</p>
+              <div class="work-tags"><span>AI Agent</span><span>Automation</span><span>Booking</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="automation" data-open="orr" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: Orr and Associates, 66 Workflows">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/workflow-insurance-orr-Di096j0j-thumb.webp" srcset="assets/projects/workflow-insurance-orr-Di096j0j-thumb.webp 720w, assets/projects/workflow-insurance-orr-Di096j0j_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Insurance agency workflow folders" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">05</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    66
+                  </span>
+                  <span class="work-badge">2026</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Orr &amp; Associates &mdash; 66 Workflows</h3>
+              <p class="work-tagline">An insurance agency running on 66 published, clone-ready workflows.</p>
+              <p class="work-desc">Organised into folders for intake, commercial quotes, renewals, missed calls and notifications &mdash; sub-minute first touch on every new lead.</p>
+              <div class="work-tags"><span>Automation</span><span>CRM</span><span>Insurance</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="automation sms" data-open="missedcall" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: Missed Call Text-Back">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/workflow-missed-call-text-back-BhtqrN7i-thumb.webp" srcset="assets/projects/workflow-missed-call-text-back-BhtqrN7i-thumb.webp 720w, assets/projects/workflow-missed-call-text-back-BhtqrN7i_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Missed call text-back workflow" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">06</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    1
+                  </span>
+                  <span class="work-badge">2025</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Missed Call Text-Back</h3>
+              <p class="work-tagline">24/7 recovery for the calls nobody picked up.</p>
+              <p class="work-desc">Triggers on missed, busy, cancelled and no-answer inbound calls, then fires a professional SMS in seconds. Recovered three jobs in the first week.</p>
+              <div class="work-tags"><span>SMS</span><span>Automation</span><span>Lead Recovery</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="automation">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW-thumb.webp" srcset="assets/projects/workflow-automatizacion-pt-es-D6eyoPGW-thumb.webp 720w, assets/projects/workflow-automatizacion-pt-es-D6eyoPGW_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="PT/ES automation recipes workflow" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">07</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    1
+                  </span>
+                  <span class="work-badge">2025</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">Automatizaci&oacute;n PT/ES</h3>
+              <p class="work-tagline">A bilingual recipe library for a fast-moving sales team.</p>
+              <p class="work-desc">Clone-ready automation recipes wired for PT/ES locale &mdash; the same trigger-and-action patterns the team runs today, documented and ready to drop into a new account.</p>
+              <div class="work-tags"><span>Recipes</span><span>Automation</span><span>CRM</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-tags="integration" data-open="zapier" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Open case study: GHL to HubSpot via Zapier">
+            <div class="work-media">
+              <img decoding="async" src="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm-thumb.webp" srcset="assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm-thumb.webp 720w, assets/projects/zapier-pt-es-ghl-hubspot-bt3o_LWm_result.webp 1024w" sizes="(min-width: 1000px) 340px, (min-width: 640px) 44vw, 92vw" alt="Zapier GHL to HubSpot bridge" loading="lazy" />
+              <div class="work-meta">
+                <span class="work-num">08</span>
+                <div class="work-badges">
+                  <span class="work-badge work-badge-count">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    1
+                  </span>
+                  <span class="work-badge">2026</span>
+                </div>
+              </div>
+              <div class="work-cta"><span class="work-cta-pill">View Case Study &rarr;</span></div>
+            </div>
+            <div class="work-body">
+              <h3 class="work-name">GHL &#8676; HubSpot via Zapier</h3>
+              <p class="work-tagline">Two CRMs in lockstep &mdash; companies first, contacts second, nothing orphaned.</p>
+              <p class="work-desc">A webhook bridge that creates the HubSpot company before the contact, maps attributes in PT/ES locale, and validates field mapping with historical hook requests before go-live.</p>
+              <div class="work-tags"><span>Integration</span><span>Zapier</span><span>CRM</span></div>
+            </div>
+          </article>
         </div>
 
         <!-- Case study modals (opened via Recent Work cards) -->
