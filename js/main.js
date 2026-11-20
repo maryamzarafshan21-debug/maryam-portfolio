@@ -1,4 +1,6 @@
-﻿const root = document.documentElement;
+﻿import emailjs from '@emailjs/browser';
+
+const root = document.documentElement;
 
 /* ---------- Mobile nav ---------- */
 const navToggle = document.querySelector('.nav-toggle');
@@ -401,10 +403,16 @@ document.addEventListener('keydown', (e) => {
 /* ---------- Contact form ---------- */
 const contactForm = document.getElementById('contact-form');
 const CONTACT_EMAIL = 'afsheen.ghl@gmail.com';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
-contactForm.addEventListener('submit', (event) => {
+if (EMAILJS_PUBLIC_KEY) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+contactForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
   const name = document.getElementById('f-name').value.trim();
   const email = document.getElementById('f-email').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
@@ -416,13 +424,36 @@ contactForm.addEventListener('submit', (event) => {
     return;
   }
 
-  const subject = encodeURIComponent(`Project inquiry from ${name}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '—'}\nBudget: ${budget || '—'}\n\nProject Details:\n${message}`
-  );
+  if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+    showFormStatus('Contact form is not configured yet. Emailing you directly…', 'error');
+    const subject = encodeURIComponent(`Project inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '—'}\nBudget: ${budget || '—'}\n\nProject Details:\n${message}`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    return;
+  }
 
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  showFormStatus('Opening your email app — just hit send!', 'ok');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      from_name: name,
+      reply_to: email,
+      phone: phone || '—',
+      budget: budget || '—',
+      message,
+    });
+    contactForm.reset();
+    showFormStatus('Message sent successfully. I’ll get back to you soon!', 'ok');
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    showFormStatus('Could not send message. Please try again or email directly.', 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  }
 });
 
 function showFormStatus(text, type) {
@@ -432,5 +463,5 @@ function showFormStatus(text, type) {
   setTimeout(() => {
     note.textContent = 'Prefer email? Drop me a line at afsheen.ghl@gmail.com';
     note.style.color = 'var(--text-muted)';
-  }, 6000);
+  }, 8000);
 }
