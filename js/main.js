@@ -438,18 +438,26 @@ contactForm.addEventListener('submit', async (event) => {
   submitBtn.textContent = 'Sending…';
 
   try {
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      from_name: name,
-      reply_to: email,
-      phone: phone || '—',
-      budget: budget || '—',
-      message,
-    });
+    await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        name,
+        email,
+        title: `New portfolio inquiry from ${name}`,
+        message,
+        time: new Date().toLocaleString(),
+      },
+      EMAILJS_PUBLIC_KEY
+    );
     contactForm.reset();
     showFormStatus('Message sent successfully. I’ll get back to you soon!', 'ok');
   } catch (err) {
-    console.error('EmailJS error:', err);
-    showFormStatus('Could not send message. Please try again or email directly.', 'error');
+    console.error('EmailJS send failed:', err);
+    showFormStatus(
+      `Could not send message. ${err && (err.text || err.message) ? err.text || err.message : 'Please try again or email directly.'}`,
+      'error'
+    );
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = 'Send Message';
